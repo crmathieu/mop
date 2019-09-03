@@ -46,7 +46,6 @@ func main() {
     var mux http.Server
     mux.HandleFunc("/", router)
 
-    // prep this puppy
     handler := cors.New(cors.Options{
         AllowedHeaders: []string{
             "Authorization",
@@ -57,7 +56,9 @@ func main() {
             "Content-Type"},
         AllowCredentials: true,
     }).Handler(mux)
-    mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})
-}
+``` 
+```text   mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})
+```
+```go}
 ```
 Any service using Mop will shutdown safely upon receiving 2 types of signals: SIGTERM or SIGINT (Ctrl+C). 
