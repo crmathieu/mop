@@ -57,8 +57,10 @@ func main() {
         AllowCredentials: true,
     }).Handler(mux)
 ``` 
-```text   mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})
+```text   
+    mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})
 ```
-```go}
+```go
+}
 ```
 Any service using Mop will shutdown safely upon receiving 2 types of signals: SIGTERM or SIGINT (Ctrl+C). 
