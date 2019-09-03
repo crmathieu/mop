@@ -3,7 +3,7 @@ Mop allows a microservice to shutdown gracefully, waiting for pending requests t
 
 ## usage
 ```go
-import "github.com/discovry/mop"
+import "github.com/crmathieu/mop"
 ```
 
 Only one call is needed in the main:
