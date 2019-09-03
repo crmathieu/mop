@@ -58,7 +58,7 @@ func main() {
     }).Handler(mux)
 ``` 
 ```text   
-    mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})
+    <span style="color: green">mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})</span>
 ```
 ```go
 }
