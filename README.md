@@ -56,8 +56,10 @@ func main() {
             "Content-Type"},
         AllowCredentials: true,
     }).Handler(mux)
-``` 
-    **mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})**
+```
+
+    _mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})_
+
 ```go
 }
 ```
