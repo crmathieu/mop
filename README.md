@@ -57,9 +57,7 @@ func main() {
         AllowCredentials: true,
     }).Handler(mux)
 ``` 
-```text   
     <span style="color: green">mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})</span>
-```
 ```go
 }
 ```
