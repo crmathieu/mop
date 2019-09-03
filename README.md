@@ -17,7 +17,7 @@ where
 
 Most services have in their main function a call to a server "ListenAndServe" function. This should be removed and replaced by a mop.SetServer call. SetServer is a wrapper function that will call ListenAndServe on the behalf of the service and, at the same time, set up the necessary system signals and channels. 
 
-Adding Mop is easy. For instance, the quarks service main function is build like so:
+Adding Mop is easy. Here is an example of a service main function:
 
 ```go
 func main() {
@@ -25,7 +25,6 @@ func main() {
     var mux http.Server
     mux.HandleFunc("/", router)
 
-    // prep this puppy
     handler := cors.New(cors.Options{
         AllowedHeaders: []string{
             "Authorization",
@@ -61,4 +60,4 @@ func main() {
     mop.SetServer(&http.Server{Addr: ":8022", Handler: handler})
 }
 ```
-That's it. Any service using Mop will shutdown safely upon receiving 2 types of signals: SIGTERM or SIGINT (Ctrl+C). 
+Any service using Mop will shutdown safely upon receiving 2 types of signals: SIGTERM or SIGINT (Ctrl+C). 
